@@ -1,0 +1,141 @@
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: linear-gradient(135deg, #fdf2f8, #eef2ff, #fce7f3);
+    overflow-x: hidden;
+}
+
+/* floating hearts */
+.floating-hearts {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.float-heart {
+    position: absolute;
+    bottom: 0;
+    font-size: 20px;
+    animation: floatUp 6s linear;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(-100vh); opacity: 0; }
+}
+
+/* layout */
+.container {
+    display: flex;
+    position: relative;
+    z-index: 2;
+}
+
+/* sidebar */
+.sidebar {
+    width: 250px;
+    background: white;
+    position: fixed;
+    left: -260px;
+    height: 100%;
+    padding: 20px;
+    transition: 0.3s;
+}
+
+.sidebar.active { left: 0; }
+
+/* content */
+.content {
+    padding: 60px;
+}
+
+/* button */
+#toggleBtn {
+    background: linear-gradient(135deg,#ec4899,#8b5cf6);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* titles */
+h1 {
+    background: linear-gradient(90deg,#ec4899,#8b5cf6,#6366f1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ❤️ HEART SECTION FIX */
+.heart-section {
+    text-align: center;
+    margin-top: 120px;
+}
+
+/* ⭐ FIX 2: same size as content text */
+.heart-text {
+    font-size: 50px;   /* FIXED */
+    color: #ec4899;
+    animation: glow 2s infinite alternate;
+}
+.content h1 {
+    font-size: 50px;   /* চাইলে বড়/ছোট করো */
+}
+
+.content p {
+    font-size: 40px;   /* normal readable size */
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 10px pink; }
+    to { text-shadow: 0 0 30px hotpink; }
+}
+
+/* big heart */
+.big-heart {
+    font-size: 160px;
+    cursor: pointer;
+    animation: beat 1.2s infinite;
+}
+
+@keyframes beat {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.25); }
+    100% { transform: scale(1); }
+}
+
+/* ⭐ FIX 1: popup only overlay, no page effect */
+.love-popup {
+    position: fixed;
+    inset: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,0.75);
+    z-index: 9999;   /* FIXED HIGH */
+}
+
+/* box */
+.popup-content {
+    background: linear-gradient(135deg,#ec4899,#8b5cf6);
+    padding: 40px;
+    border-radius: 20px;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+/* close */
+#closeBtn {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    cursor: pointer;
+}
+
+/* slide text */
+.slide-box p {
+    display: none;
+    font-size: 40px;
+}
