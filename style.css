@@ -1,0 +1,149 @@
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: linear-gradient(135deg, #fdf2f8, #eef2ff, #fce7f3);
+    overflow-x: hidden;
+}
+
+/* Floating hearts */
+.floating-hearts {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.float-heart {
+    position: absolute;
+    bottom: 0;
+    font-size: 20px;
+    animation: floatUp 6s linear;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(-100vh); opacity: 0; }
+}
+
+/* Layout */
+.container { display: flex; z-index: 2; position: relative; }
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background: white;
+    position: fixed;
+    left: -260px;
+    height: 100%;
+    padding: 20px;
+    transition: 0.3s;
+}
+.sidebar.active { left: 0; }
+
+/* Content */
+.content {
+    padding: 60px;
+    transition: 0.3s;
+}
+.content.shift { margin-left: 260px; }
+
+/* Button */
+#toggleBtn {
+    background: linear-gradient(135deg,#ec4899,#8b5cf6);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* Title */
+h1 {
+    background: linear-gradient(90deg,#ec4899,#8b5cf6,#6366f1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* HEART SECTION */
+.heart-section {
+    text-align: center;
+    margin-top: 120px;
+}
+
+/* glowing text */
+.heart-text {
+    color: #ec4899;
+    animation: glow 2s infinite alternate;
+}
+@keyframes glow {
+    from { text-shadow: 0 0 10px pink; }
+    to { text-shadow: 0 0 30px hotpink; }
+}
+
+/* BIG HEART */
+.big-heart {
+    font-size: 130px;
+    cursor: pointer;
+    animation: beat 1.2s infinite;
+}
+@keyframes beat {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.25); }
+    100% { transform: scale(1); }
+}
+
+/* POPUP */
+.love-popup {
+    position: fixed;
+    top:0;left:0;right:0;bottom:0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,0.7);
+    z-index: 999;
+}
+
+/* BOX */
+.popup-content {
+    background: linear-gradient(135deg,#ec4899,#8b5cf6);
+    padding: 40px;
+    border-radius: 20px;
+    color: white;
+    text-align: center;
+}
+
+/* CLOSE */
+#closeBtn {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    cursor: pointer;
+}
+
+/* TEXT */
+.slide-box p {
+    display: none;
+    font-size: 22px;
+    animation: fade 1s;
+}
+@keyframes fade {
+    from {opacity:0; transform: translateY(20px);}
+    to {opacity:1;}
+}
+
+/* 🔥 BIGGER H1 TITLE */
+.content h1 {
+    font-size: 48px;   /* আগের থেকে বড় */
+    font-weight: 800;
+    color: #000;       /* black */
+    line-height: 1.3;
+}
+
+.content p {
+    font-size: 34px;
+    font-weight: 300;   /* thin */
+    color: #000;
+    line-height: 1.9;
+    letter-spacing: 0.6px;
+    opacity: 0.95;      /* soft feel */
+}
